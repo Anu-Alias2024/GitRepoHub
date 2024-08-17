@@ -24,21 +24,6 @@ public class ProgramList {
 	        //Refactor sum of odd numbers
 	        sumofOddnumbers(numbers);
 			
-			sum = sumofEvennum(numbers, sum);
-			
-			
-			sumOfNaturalNumbers(n, sum); 
-	        
-	        int sumodd=0;
-	        
-	    	for(int num : numbers)
-			{
-				if(num % 2==1)
-				{
-					sumodd +=num;
-				}
-			}
-			System.out.println("Sum of odd numbers: "+sumodd);
 			
 			System.out.println ("The factorial of "+n+ " is : " + factorialStreams(n));
 			
