@@ -29,23 +29,9 @@ public class ProgramList {
 			
 			sumOfNaturalNumbers(n, sum); 
 	        
-	        int sumodd=0;
-	        
-	    	for(int num : numbers)
-			{
-				if(num % 2==1)
-				{
-					sumodd +=num;
-				}
-			}
-			System.out.println("Sum of odd numbers: "+sumodd);
+	        sumofOddNumbers(numbers);
 			
-			System.out.println ("The factorial of "+n+ " is : " + factorialStreams(n));
-			
-			
-		IntStream.rangeClosed(2, n)
-		.filter(ProgramList::isPrime)
-		.forEach(System.out::println);
+			getFactorial(n);
 
 		}
 			
@@ -54,7 +40,15 @@ public class ProgramList {
 		
 	
 	}
-	private static void sumofOddnumbers(ArrayList<Integer> numbers) {
+	private static void getFactorial(int n) {
+		System.out.println ("The factorial of "+n+ " is : " + factorialStreams(n));
+		
+		
+IntStream.rangeClosed(2, n)
+.filter(ProgramList::isPrime)
+.forEach(System.out::println);
+	}
+	private static void sumofOddNumbers(ArrayList<Integer> numbers) {
 		int sumodd=0;
 		
 		for(int num : numbers)
@@ -65,6 +59,9 @@ public class ProgramList {
 			}
 		}
 		System.out.println("Sum of odd numbers: "+sumodd);
+	}
+	private static void sumofOddnumbers(ArrayList<Integer> numbers) {
+		sumofOddNumbers(numbers);
 	}
 	private static int getSizeofthelist(Scanner sc) {
 		System.out.println("enter the limit");
