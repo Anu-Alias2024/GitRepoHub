@@ -1,7 +1,9 @@
 package com.ust.gitrepo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.Map.Entry;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
@@ -39,6 +41,27 @@ public class ProgramList {
 		
 		// Armstrong
 			getArmstrongSum(123);
+		}
+		
+		char []strArr=str.toCharArray();
+		HashMap <String,Integer> hp=new HashMap<>();
+		for(char c:strArr) {
+			
+			if(hp.containsKey(Character.toString(c).toLowerCase())){
+				hp.put(Character.toString(c).toLowerCase(), hp.get(Character.toString(c).toLowerCase())+1);
+			}
+			else
+			{
+				hp.put(Character.toString(c).toLowerCase(), 1);
+			}
+		}
+		
+		System.out.println("Duplicate Letters");
+		for(Entry<String, Integer> entry:hp.entrySet())
+		{
+			if(entry.getValue()>1) {
+			System.out.println(entry.getKey() +": repeated "+entry.getValue()+" times");
+			}
 		}
 
 	}
