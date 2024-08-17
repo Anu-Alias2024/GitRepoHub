@@ -2,6 +2,7 @@ package com.ust.gitrepo;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.stream.LongStream;
 
 public class SumofEvenNumber {
 
@@ -23,8 +24,36 @@ public class SumofEvenNumber {
 					sum +=num;
 				}
 			}
-			System.out.print("Sum : "+sum);
+			System.out.println("Sum : "+sum);
+			
+			
+			for (int i = 1; i <= n; i++) { 
+	            sum += i; 
+	        } 
+	        
+	        System.out.println("Sum of first " + n 
+	                           + " Natural Number = " + sum); 
+	        
+	        int sumodd=0;
+	        
+	    	for(int num : numbers)
+			{
+				if(num % 2==1)
+				{
+					sumodd +=num;
+				}
+			}
+			System.out.println("Sum of odd numbers: "+sumodd);
+			
+			System.out.println ("The factorial of "+n+ " is : " + factorialStreams(n));
 		}
+		
+		
+	
 	}
+	public static long factorialStreams(long n) {
 
+		  return LongStream.rangeClosed(1, n)
+		      .reduce(1, (long a, long b) -> a * b);
+		}
 }
