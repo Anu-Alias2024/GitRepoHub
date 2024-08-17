@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
-public class SumofEvenNumber {
+public class ProgramList {
 
 	public static void main(String[] args) {
 		try(Scanner sc = new Scanner(System.in)) {
@@ -16,18 +16,9 @@ public class SumofEvenNumber {
 			
 			ArrayList<Integer> numbers = new ArrayList<>();
 			int sum =0;
-			for(int i =0; i<n;i++) {
-				numbers.add(sc.nextInt());
-			}
+			addnumberstolist(sc, n, numbers);
 			
-			for(int num : numbers)
-			{
-				if(num % 2==0)
-				{
-					sum +=num;
-				}
-			}
-			System.out.println("Sum : "+sum);
+			sum = sumofEvennum(numbers, sum);
 			
 			
 			for (int i = 1; i <= n; i++) { 
@@ -52,7 +43,7 @@ public class SumofEvenNumber {
 			
 			
 		IntStream.rangeClosed(2, n)
-		.filter(SumofEvenNumber::isPrime)
+		.filter(ProgramList::isPrime)
 		.forEach(System.out::println);
 
 		}
@@ -61,6 +52,22 @@ public class SumofEvenNumber {
 		
 		
 	
+	}
+	private static int sumofEvennum(ArrayList<Integer> numbers, int sum) {
+		for(int num : numbers)
+		{
+			if(num % 2==0)
+			{
+				sum +=num;
+			}
+		}
+		System.out.println("Sum : "+sum);
+		return sum;
+	}
+	private static void addnumberstolist(Scanner sc, int n, ArrayList<Integer> numbers) {
+		for(int i =0; i<n;i++) {
+			numbers.add(sc.nextInt());
+		}
 	}
 	   public static boolean isPrime(int number) {
 	        for (int i = 2; i <= number / 2; i++) {
