@@ -1,8 +1,6 @@
 package com.ust.gitrepo;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -21,12 +19,7 @@ public class ProgramList {
 			sum = sumofEvennum(numbers, sum);
 			
 			
-			for (int i = 1; i <= n; i++) { 
-	            sum += i; 
-	        } 
-	        
-	        System.out.println("Sum of first " + n 
-	                           + " Natural Number = " + sum); 
+			sumOfNaturalNumbers(n, sum); 
 	        
 	        int sumodd=0;
 	        
@@ -52,6 +45,14 @@ public class ProgramList {
 		
 		
 	
+	}
+	private static void sumOfNaturalNumbers(int n, int sum) {
+		for (int i = 1; i <= n; i++) { 
+		    sum += i; 
+		} 
+		
+		System.out.println("Sum of first " + n 
+		                   + " Natural Number = " + sum);
 	}
 	private static int sumofEvennum(ArrayList<Integer> numbers, int sum) {
 		for(int num : numbers)
