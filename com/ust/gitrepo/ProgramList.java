@@ -21,7 +21,8 @@ public class ProgramList {
 			// Refactor o sum n natural numbers
 
 			sumOfNaturalNumbers(n, sum);
-			
+			// Refactor sum of odd numbers
+			sumofOddnumbers(numbers);
 			// Refactor factorial
 			getFactorial(n);
 			sumOfNaturalNumbers(n, sum); 
@@ -35,6 +36,8 @@ public class ProgramList {
 		IntStream.rangeClosed(2, n)
 		.filter(ProgramList::isPrime)
 		.forEach(System.out::println);
+		
+		// Armstrong
 			getArmstrongSum(123);
 		}
 
