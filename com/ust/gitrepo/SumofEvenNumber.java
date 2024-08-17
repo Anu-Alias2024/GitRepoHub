@@ -1,7 +1,10 @@
 package com.ust.gitrepo;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 
 public class SumofEvenNumber {
@@ -46,11 +49,28 @@ public class SumofEvenNumber {
 			System.out.println("Sum of odd numbers: "+sumodd);
 			
 			System.out.println ("The factorial of "+n+ " is : " + factorialStreams(n));
+			
+			
+		IntStream.rangeClosed(2, n)
+		.filter(SumofEvenNumber::isPrime)
+		.forEach(System.out::println);
+
 		}
+			
+		
 		
 		
 	
 	}
+	   public static boolean isPrime(int number) {
+	        for (int i = 2; i <= number / 2; i++) {
+	            if (number % i == 0) {
+	                return false;
+	            }
+	        }
+	        return true;
+	    }
+	
 	public static long factorialStreams(long n) {
 
 		  return LongStream.rangeClosed(1, n)
