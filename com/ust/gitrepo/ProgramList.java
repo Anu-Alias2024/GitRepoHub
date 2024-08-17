@@ -25,11 +25,19 @@ public class ProgramList {
 			sumofOddnumbers(numbers);
 			// Refactor factorial
 			getFactorial(n);
+			
+			getArmstrongSum(123);
 
 		}
 
 	}
-
+	public static int getArmstrongSum(int num) {
+	    int pow = String.valueOf(num).length();
+	    return IntStream.iterate(num, i -> i / 10)
+	            .limit(pow)
+	            .map(i -> (int) Math.pow(i % 10, pow))
+	            .sum();
+	}
 	private static void getFactorial(int n) {
 		System.out.println("The factorial of " + n + " is : " + factorialStreams(n));
 
